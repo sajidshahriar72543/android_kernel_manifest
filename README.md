@@ -2,7 +2,7 @@
 
 ## Repo Init ##
 ```bash
-repo init -u https://github.com/Statix-Gram/android_kernel_manifest.git -b android-msm-beryllium-4.9-android10
+repo init -u https://github.com/Statix-Gram/android_kernel_manifest.git -b android-msm-4.14
 ```
 ## Sync Source ##
 ```bash

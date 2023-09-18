@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
-  <remote name="statix" fetch="https://github.com/StatiXOS" />
-  <remote name="github" fetch="https://github.com/" />
+  <remote name="aosp" 
+    fetch="https://android.googlesource.com/" />
+  <remote name="statix" 
+    fetch="https://github.com/StatiXOS" />
+  <remote  name="github"
+    fetch="https://github.com/" />
+  <remote  name="statix-gram"
+    fetch="https://github.com/Statix-Gram" />
+  <remote  name="cr_clang17"
+    fetch="https://gitlab.com/crdroidandroid/" />
 
-  <default remote="aosp" sync-j="16" />
+  <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
+  <superproject name="kernel/superproject" remote="aosp"/>
   <project path="build" name="android_kernel_build" revision="sc-v2" remote="statix">
     <linkfile src="build.sh" dest="build.sh" />
   </project>
-  <project path="kernel/msm-4.14" name="c0smic-Lab/kernel_xiaomi_sm6250" remote="github" revision="main">
+  <!-- <project path="build" name="kernel/build" /> -->
+  <project path="kernel/tests" name="kernel/tests" />
+  <project path="kernel/configs" name="kernel/configs" />
+  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" />
+  <!-- <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" /> -->
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
+
+  <!-- gram Kernel -->
+  <project path="kernel/msm-4.14" name="kernel_xiaomi_sm6250" remote="statix-gram" revision="main" >
     <linkfile src="build.config.gram" dest="build.config"/>
   </project>
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master"/>
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" revision="0b1bb8dd7e3ad5ee9898535e91a673b46386de09" clone-depth="1"/>
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="65e6e70ed1ba42c3d1e9b608cac7977196f32af4" clone-depth="1"/>
-  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" revision="master" clone-depth="1"/>
-  <project path="kernel/tests" name="kernel/tests" revision="master"/>
+
+  <!-- clang 17 -->
+  <project path="prebuilts-master/clang/host/linux-x86/clang-r498229b" name="android_prebuilts_clang_host_linux-x86_clang-r498229b" remote="cr_clang17" clone-depth="1" revision="13.0" />
+
 </manifest>
