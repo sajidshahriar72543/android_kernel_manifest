@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="aosp" 
+
+  <remote 
+    name="aosp" 
     fetch="https://android.googlesource.com/" />
-  <remote name="statix" 
-    fetch="https://github.com/StatiXOS" />
-  <remote  name="github"
-    fetch="https://github.com/" />
-  <remote  name="statix-gram"
-    fetch="https://github.com/Statix-Gram" />
-  <remote  name="cr_clang17"
-    fetch="https://gitlab.com/crdroidandroid/" />
+  <remote 
+    name="statix" 
+    fetch="https://github.com/StatiXOS"
+    clone-depth="1" />
+  <remote  
+    name="github"
+    fetch="https://github.com/"
+    clone-depth="1" />
+  <remote  
+    name="statix-gram"
+    fetch="https://github.com/Statix-Gram"
+    clone-depth="1" />
+  <remote  
+    name="cr_clang17"
+    fetch="https://gitlab.com/crdroidandroid/"
+    clone-depth="1" />
 
   <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp"/>
+
+  <!-- Build Script -->
   <project path="build" name="android_kernel_build" revision="sc-v2" remote="statix">
     <linkfile src="build.sh" dest="build.sh" />
   </project>
+
+  <!-- Build Tools -->
   <!-- <project path="build" name="kernel/build" /> -->
   <project path="kernel/tests" name="kernel/tests" />
   <project path="kernel/configs" name="kernel/configs" />
   <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" />
-  <!-- <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" /> -->
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
 
