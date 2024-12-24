@@ -18,7 +18,7 @@
     clone-depth="1" />
   <remote  
     name="cr_clang17"
-    fetch="https://gitlab.com/crdroidandroid/"
+    fetch="https://gitlab.com/GhostMaster69-dev/"
     clone-depth="1" />
 
   <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
@@ -44,6 +44,6 @@
   </project>
 
   <!-- clang 17 -->
-  <project path="prebuilts-master/clang/host/linux-x86/clang-r498229b" name="android_prebuilts_clang_host_linux-x86_clang-r498229b" remote="cr_clang17" clone-depth="1" revision="13.0" />
+  <project path="prebuilts-master/clang/host/linux-x86/clang-r498229b" name="cosmic-clang" remote="cr_clang17" clone-depth="1" revision="release/17.x" />
 
 </manifest>
