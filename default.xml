@@ -39,7 +39,7 @@
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
 
   <!-- gram Kernel -->
-  <project path="kernel/msm-4.14" name="PixelOS-Devices/kernel_xiaomi_miatoll" remote="github" revision="fourteen" >
+  <project path="kernel/msm-4.14" name="sajidshahriar72543/kernel_xiaomi_sm6250" remote="github" revision="15" >
     <linkfile src="build.config.miatoll" dest="build.config"/>
   </project>
 
