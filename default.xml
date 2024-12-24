@@ -37,6 +37,8 @@
   <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="partner" />
 
   <!-- gram Kernel -->
   <project path="kernel/msm-4.14" name="sajidshahriar72543/kernel_xiaomi_sm6250" remote="github" revision="15" >
